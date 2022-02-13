@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+		<style>
+			#answer
+			{width:200px; height:200px; background:pink;}
+		</style>
+
+
+		<div id="answer"></div>
+
+<!-- 		<script> -->
+<!-- 			var score1 = 90; -->
+<!-- 			var score2 = 95; -->
+<!-- 			var highScore1 = 75; -->
+<!-- 			var highScore2 = 95; -->
+<!--  -->
+<!-- 			var comparison = (score1 + score2) > (highScore1 + highScore2); -->
+<!--  -->
+<!-- 			var el = document.getElementById('answer'); -->
+<!-- 			el.innerHTML = '신기록 달성: ' + comparison; -->
+<!-- 		</script> -->
+
+		<script>
+
+			//if
+//			var score = 70;
+//			var msg ='';
+//			
+//			function congratulate(){
+//				msg = '축하합니다!'
+//			}
+//
+//			if (score >= 50){
+//				congratulate();
+//				msg +='<br /> 다음 단계를 진행합니다.'
+//			}
+//
+//			document.getElementById('answer').innerHTML = msg;
+		</script>
+
+		<script>
+
+			//elseif
+//			var pass = 50;
+//			var score = prompt('점수를 입력해주새요.');
+//			var msg;
+//			
+//
+//			if (score >= pass){
+//				msg ='축하합니다. 합격입니다.'
+//			} else {
+//				msg = "다시한번!"
+//			}
+//			
+//			document.getElementById('answer').innerHTML = msg;
+		</script>
+		
+		<script>
+
+			//switch
+			var msg;
+			var stage = prompt('스테이지를 입력해주세요.(1~3까지)');
+
+			switch (stage) {
+				case '1':
+				msg = "1단계 입니다. 화이팅!"
+				break;
+
+				case '2':
+				msg = "2단계 입니다. 조금만 더 힘내주세요."
+				break;
+
+				case '3':
+				msg = "3단계 입니다. 어려워도 포기하지 말아요."
+				break;
+				
+				default:
+				msg = "존재하지 않는 스테이지입니다. 다시 입력해주세요."
+				break;
+			}
+
+			document.getElementById('answer').innerHTML = msg;
+
+		</script>
+
+
+
+
+    </body>
+</html>

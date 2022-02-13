@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+		<title>함수실습</title>
+
+		<!-- <script>
+			function numbering() {
+				i = 0;
+				while (i < 10){
+					document.write(i);
+					i += 1;
+				}
+			}
+		
+			numbering();
+		</script>
+		
+		<script>
+			function get_number1 (){
+				return 'egoing';
+				return 'leezche';
+				return 'grape';
+			}
+		
+			alert(get_number1());
+		
+		</script>
+		
+		<script>
+			function argumrnt(arg) {
+				return arg;
+			}
+		
+			alert(argumrnt(1));
+			alert(argumrnt(2));
+		</script> -->
+
+    </head>
+    <body>
+		<style>
+
+		</style>
+		
+		<h1>TrevelWorthy</h1>
+		<div id="message">환영합니다.</div>
+
+		<script>
+			//책 실습
+			
+			var msg = '10% 할인을 받으시려면 지금 회원으로 가입하세요!';
+			
+			function updateMessage() {
+				var el = document.getElementById('message');
+				el.textContent = msg;
+			};
+			
+			updateMessage();
+
+			//매개변수 전달
+
+			function getArea (width,height) {
+				return width * height;
+			}
+
+			//alert(getArea(3,5));
+
+			//함수로부터 단일 값 전달받기
+
+			function calculateArea (width,height){
+				var area = width * height;
+				return area;
+			}
+
+			var wallOne = calculateArea (3,9);
+			var wallTwo = calculateArea (3,7);
+
+			///alert(wallOne);
+
+			//함수로부터 여러 값 전달받기
+
+			function getSize (width, height, depth){
+				var area = width * height;
+				var volume = width * height * depth;
+				var sizes = [area,volume];
+				return sizes;
+			}
+
+			var areaOne = getSize(4,5,4)[0];
+			var volumeOne = getSize(3,2,6)[1];
+
+			//alert(volumeOne);
+
+			function output() {
+			  return 'first';
+			  return 'secong';
+			  return 'third'; 
+			}
+
+			//alert(output());
+
+			var a = '지역변수';
+			function variable(){
+			  return a;
+			}
+
+			alert(variable());
+		</script>
+
+    </body>
+</html>

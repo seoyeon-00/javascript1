@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+		<title>배열</title>
+
+    </head>
+    <body>
+		<style>
+
+		</style>
+
+		<script>
+			
+			function get_members() {
+				return ['egoing', 'k8805', 'sorialgi', 'leezche'];//원소의 개수 가변적으로 변경
+			}
+
+			members = get_members();
+
+			
+			//배열에 담겨있는 원소의 개수에 따라 탄력적으로 변함
+			for(var i = 0; i < members.length; i++){
+				document.write(members[i].toUpperCase() + "<br />");
+			}
+
+
+			//책 실습
+			
+			var a = ['egoing', 'k8805', 'sorialgi', 'leezche'];			
+			//a는 배열의 값이 몇개인지 (=원소가 몇개 인지)
+			//alert(a.length);
+
+	
+
+		</script>
+
+    </body>
+</html>
