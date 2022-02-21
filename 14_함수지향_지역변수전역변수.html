@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+		<title>모듈 효용성 node.js 예제</title>
+		
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+     </head>
+    <body>	
+		
+		<script>
+			
+			//전역변수(global variables)
+			//자바스크립트 앱플리케이션 전역에서 접근
+			var vscope = 'global';
+
+
+			//함수안에 변수 선언 안에 변수를 사용할때 가기가신에게 가까운 쪽에 정의된 vscope 함수내 선언된 vscope를 가르킴
+			//안에 없으면 함수 밖에서 정의된 vscope를 찾게됨
+			function fscope (){
+				
+				//var vscope = 'local';
+				//var lv = 'local variacles';
+
+				//모든 함수 내에서 밖깥쪽에 정의된 vscope를 변수에 접근할 수 있기 때문에 저것은 전역에서 접근할 수 있다.
+				//alert(lv);
+				alert(vscope);
+			}
+
+			function fscope2 (){
+
+				//함수안에다 쓰면 안에서만 접근이 가능하다.
+				//지역변수(local variables)
+				//지역변수는 함수 중괄호 안에서 접근할 수 있는 변수
+				var vscope = 'local';
+				alert(vscope);
+			}
+
+			function fscope3 (){
+
+				//var 쓰고 안쓰고 차이
+				//VAR 쓰게되면 그 뒤에 따라오는 변수는 로컬변수가 됩니다.
+				//vscope
+				var vscope = 'local';
+
+				//var 쓰고 안쓰고 차이
+				vscope = 'local';
+			}
+			
+			//fscope();
+			//fscope2();
+			//fscope3();
+			//alert(vscope);
+		</script>
+
+		
+		<script>
+			
+			var vscope = 'global';
+			function scope() {
+			  var vscope = 'local';
+			  vscope = 'local2';
+
+			  alert(vscope);
+			}
+			scope();
+			alert(vscope); //local
+		</script>
+		
+    </body>
+</html>
