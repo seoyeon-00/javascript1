@@ -4,14 +4,26 @@
         <meta charset="utf-8"/>
 		<title>모듈 효용성 node.js 예제</title>
 
-		<script type="text/javascript" src="greeting.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
      </head>
     <body>	
-		<script>
-	
-			
+		
+		<ul id="list">
+			<li>empty</li>	
+			<li>empty</li>	
+			<li>empty</li>	
+			<li>empty</li>	
+		</ul>
 
+		<input type="button" value="excute" id="excute_btn">
+		<script type="text/javascript">
+
+		$('#excute_btn').click(function(){
+			$('#list li').text('coding everybody');
+		});
+			
+			
 		</script>			
     </body>
 </html>

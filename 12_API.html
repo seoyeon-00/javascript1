@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+		<title>모듈 효용성 node.js 예제</title>
+		
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+     </head>
+    <body>	
+		
+		<div class="third" id="loc">We are trying to find your location.</div>
+
+		<script src="js/modernizr.2.7.1.js"></script>
+		<script>
+			var elMap = document.getElementById('loc');
+			var msg = '현재 위치 정보를 얻을 수 없습니다.';
+
+			if (Modernizr.geolocation){
+				navigator.geolocation.getCurrentPosition(success, fail);
+				elMap.textContent = '위치 확인중...';
+			} else {
+				elMap.textContent = msg;
+			}
+			
+			function success(location){
+				msg = '<h3>위도: <br>';
+				msg += location.coords.latitude + '</h3>';
+				msg += '<h3>경도 : <br>';
+				msg += location.coords.longitude + '</h3>';
+				elMap.innerHTML = msg; 
+			}
+
+			function fail(msg){
+				elMap.textContent = msg;
+				console.log(msg.code );
+			}
+		</script>
+		
+    </body>
+</html>

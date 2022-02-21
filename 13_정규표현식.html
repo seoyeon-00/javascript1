@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+		<title>모듈 효용성 node.js 예제</title>
+		
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+     </head>
+    <body>	
+		
+		생활코딩 : http://opentutorials.org/course/1 입니다.
+		네이버 : http://naver.com입니다.
+		
+		<script src="https://javascriptbook.com/code/c09/js/jquery-1.11.0.min.js"></script>
+		<script>
+
+		var extract = /c/;
+		console.log(extract.test('banana'));
+
+		var replacement = /d/;
+		var str = "door";
+		console.log(str.replace(replacement,'D'));
+
+		var pattern = /(\w+)\s(\w+)/;
+		var str = "Nice day";
+		var result = str.replace(pattern,"$2, $1");
+		console.log(result);
+
+		var usei = /a/i;
+		console.log("Adsdef".match(usei));
+		
+		var useg = /a/g;
+		console.log("adsda".match(useg));
+			
+		var pattern = /a/;
+		var pattern = /a./; //.은 특수한 기호, 하나의 문자 .에 어떠한 문자가 와됴 상광 없음 . 앞에는 반드시 a가 있어야한다. 
+		
+		//01  추출
+		pattern.exec('abcde'); //[a]
+		pattern.exec('abcde'); //[ab]
+		pattern.exec('bcde'); //null
+
+		//exec 정규표현식이 찾고자하는 대상을 첫번째 인자로 전달. 패턴이 찾는 정보를 대상에서 찾아서 그것이 있다면 배열로 리턴하는 함수, 매소드
+		
+
+		//02 존재유무 테스트
+		pattern.test('abcde'); //true
+		pattern.test('bcdef'); //false
+		//검색이 대상이 되는 첫번째 정보안에 우리가 찾고자 하는 값이 존재한다면 리턴삾이 불린이기 때문에 true , 없으면 false
+		
+
+		//03 치환
+		var pattern = /a/;
+		var str = 'abcdef';
+		str.match(pattern);
+
+
+		var str = 'abcdef';
+		str.replace(pattern,'A');
+
+		var urlPattern = /\b(?:https?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/gim;
+		var content = '생활코딩 : http://opentutorials.org/course/1 입니다. 네이버 : http://naver.com 입니다. ';
+		var result = content.replace(urlPattern, function(url){
+			return '<a href="'+url+'">'+url+'</a>';
+		});
+		console.log(result);
+
+
+
+		//캡처
+		var pattern = /(\w+)\s(\w+)/;
+		var str = "coding everybody";
+		var result = str.replace(pattern,"$2, $1");
+		console.log(result);
+
+
+			
+		</script>
+
+
+		
+    </body>
+</html>
