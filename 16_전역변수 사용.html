@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+		<title>전역변수를 사용하는법 & 정적 유효범위</title>
+		
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+     </head>
+    <body>	
+		
+		<!--불가피하게 전역변수를 사용해야 하는 경우는 하나의 객체를 전역변수로 만들고 객체의 속성으로 변수를 관리하는 방법을 사용한다.-->
+		<script>
+		var MYAPP = {}
+
+		//MYAPP : 객체 , calculator : 속성
+		//객체의 키값으로 left,right null은 아직 값을 명시적으로 지정하지 않았다.
+		MYAPP.calculator = {
+			'left' : null,
+			'right' : null
+		}
+		MYAPP.coordinate = {
+			'left' : null,
+			'right' : null
+		}
+		
+		MYAPP.calculator.left = 10;
+		MYAPP.calculator.right = 20;
+
+		function sum(){
+			return MYAPP.calculator.left + MYAPP.calculator.right;
+		}
+
+		document.write(sum());
+			
+		</script>
+
+
+		<!--익명함수로 전역변수 안쓰고 사용하는 방법-->
+		<script>
+			//함수 안에서 선언된 지역변수가 된다.
+			(function(){
+
+				var MYAPP = {}
+				MYAPP.calculator = {
+					'left' : null,
+					'right' : null
+				}
+				MYAPP.coordinate = {
+					'left' : null,
+					'right' : null
+				}
+				
+				MYAPP.calculator.left = 10;
+				MYAPP.calculator.right = 20;
+
+				function sum(){
+					return MYAPP.calculator.left + MYAPP.calculator.right;
+				}
+
+				document.write(sum());
+
+			}())
+
+		</script>
+			
+		<!--정적유효범위-->
+
+		<!--자바스크립트는 함수가 선언된 시점에서 유효범위를 갖는다-->
+		<script>
+			
+			//전역변수
+			var i = 5;
+
+			function a() {
+				//지역변수
+				var i = 10;
+				b();
+			}
+			
+			//b 함수 내에서 i라는 지역변수를 찾게됨
+			//그러면 전역변수를 찾게됨 a가 가진 지역변수 i에 접근할지아니면 전역변수에 접근을 하게될지?
+			//답은 5이다 왜냐면 함수가 선언된 시점에서 전역변수 i가 실행되는거지 호출된 이시점에서 b가 담겨져 있는 함수의 지역변수가 사용되는게 아니기 때문에,, 다시말해 사용될 때 가 아니고 정의될때의 전역변수가 사용됩니다. 이러한 것을 정적 유효범위하고 한다.. 어휘적 유효범위 b가 정의되는 시점에서 변수를 바라보게 된다면 정적유효범위이다.
+			function b(){
+				document.write(i);
+			}
+			
+			//a라는 함수를 호출했을 때 함수는 10
+			a();
+		</script>
+
+		
+		
+    </body>
+</html>
