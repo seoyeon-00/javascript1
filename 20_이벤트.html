@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+		<title>이벤트</title>
+		
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+
+     </head>
+    <body>	
+		
+<!-- 		<label for="username">Create a username: </label> -->
+<!--         <input type="text" id="username" /> -->
+<!--         <div id="feedback"></div> -->
+
+		<script type="text/javascript">
+		//이벤트 리스너
+			function checkUsername() {                            // Declare function
+			  var elMsg = document.getElementById('feedback');    // Get feedback element
+			  if (this.value.length < 5) {                        // If username too short
+				elMsg.textContent = 'Username must be 5 characters or more';  // Set msg
+			  } else {                                            // Otherwise
+				elMsg.textContent = '';                           // Clear message
+			  }
+			}
+
+			var elUsername = document.getElementById('username');  // Get username input
+			elUsername.addEventListener('blur', checkUsername, false);
+		</script>
+		
+
+		<input type="text" id="name">
+		<div id="message"></div>
+		<script>
+			//매개변수를 가진 이벤트 랜들러와 리스너
+
+			var elname = document.getElementById('name');
+			var Msg = document.getElementById('message');
+
+			function checkName(minLength){
+				if(elname.value.length < minLength){
+					//오류메세지
+					Msg.innerHTML = minLength + '글자 이상 입력해주세요.';
+				} else {
+					Msg.innerHTML = '';
+				}
+			}
+
+			
+
+			elname.addEventListener('blur', function() {        // When it loses focus
+			  checkName(5);                                     // Pass argument here
+			}, false);
+		</script>
+		
+		
+    </body>
+</html>

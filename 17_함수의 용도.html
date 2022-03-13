@@ -9,6 +9,31 @@
 
      </head>
     <body>	
+		<script>
+			function calculate(select){
+			  var func = {
+				'addition' : function(first,second){return first + second},
+				'multiplication' : function(first,second){return first + second}
+			  }
+			  return func[select];
+			}
+
+			alert(calculate('addition')(3,4));
+
+			var array = [
+			  function(num){return num + 3;},
+			  function(num){return num * num;},
+			  function(num){return num -50;}
+			];
+
+			var num = 12;
+			for(var i = 0; i < array.length; i++){
+			  num = array[i](num);
+			}
+
+			document.write(num);
+
+		</script>
 		
 		<!--불가피하게 전역변수를 사용해야 하는 경우는 하나의 객체를 전역변수로 만들고 객체의 속성으로 변수를 관리하는 방법을 사용한다.-->
 		<script>
