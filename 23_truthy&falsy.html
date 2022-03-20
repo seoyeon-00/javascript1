@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+		<title>배열 내장함수</title>
+		
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+
+     </head>
+    <body>	
+		
+
+
+		<script type="text/javascript">
+			
+
+			//자바스크립트 기준으로 참, 거짓으로 인식을 함 그 기준을 상세히 알아보자
+			let a  = "string";
+
+
+			if (a){
+				console.log("TRUE"); //a ="string" , [] , {}, 43 , "false", Infinity 일때 => true가 아니여도 참으로 분리하는 값을 truthy고 한다
+			} else {
+				console.log("FALSE");//a ="", undefined, null, 0, -0, NaN 일때 거짓이 아니여도 거짓으로 평가되는 값 => falsy
+			}
+
+
+
+			//어떻게 활용할지 객체를 매개변수를 받아서 받은 객체에서 특정 프로퍼티를 반환하는 함수를 포함한 함수
+
+
+			const getName = (person) => {
+
+				//unfefined, null을 넣든 이 조건에 맞게 예외 처리 할수 있도록 falsy 속성을 이용 
+				//if (person === undefined || person === null){
+				if (!person){ //false Not => True
+					return "객체가 아닙니다.";
+				} else {
+
+					return person.name;	
+				}
+			
+			};
+
+			//let person = {name: "이정환"}; //객체
+			let person = null; //undefined는 객체가 아니여서 내부 프로퍼티에 접근 불가 이럴때는 전달받은 파라미터가 조건문을 통해 객체인지 undefined, null이 아닌지 판단해줘야함
+
+
+
+			const name = getName(person);
+			console.log(name);
+		
+
+		</script>
+		
+
+		
+    </body>
+</html>
