@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+		<title>조건문 업그레이드</title>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+
+     </head>
+    <body>	
+		
+		<script type="text/javascript">
+			
+			function isKoreanFood(food){
+				if //(food === "불고기" || food === "비빔밥" || food === "떡볶이")
+				(["불고기","떡볶이","비빔밥"].includes(food)){ 
+					return true;
+				}
+
+				return false;
+			}
+
+			const food1 = isKoreanFood("불고기");
+			const food2 = isKoreanFood("파스타");
+
+			console.log(food1);
+			console.log(food2);
+
+
+		</script>
+		<script type="text/javascript">
+				
+			//1번 방식
+			const getMeal = (mealType) => {
+				if (mealType === '한식') return "불고기";
+				if (mealType === '양식') return "파스타";
+				if (mealType === '중식') return "멘보샤";
+				if (mealType === '일식') return "초밥";
+				return "굶기";
+			}
+
+			console.log(getMeal("한식"));
+			console.log(getMeal("일식"));
+			console.log(getMeal());
+
+			//2번 방식
+			const meal = {
+				한식 : "불고기",
+				중식 : "멘보샤",
+				인도식 : "카레",
+				일식 : "초밥",
+				양식 : "파스타"
+			};
+
+			const getMeal2 = (mealType) => {
+				return meal[mealType] || "굶기";
+			};
+			
+			console.log(getMeal2("양식"));
+			console.log(getMeal2("인도식"));
+			console.log(getMeal2());
+
+		</script>
+		
+
+		
+    </body>
+</html>

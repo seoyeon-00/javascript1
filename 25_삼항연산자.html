@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+		<title>삼항연산자</title>
+		
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+
+     </head>
+    <body>	
+		
+		<script type="text/javascript">
+
+
+			//1)
+			let a = 3;
+			//조건식 ?키워드<<조건식 참일때 : 거짓일때; 
+			a >= 0? console.log("양수") : console.log("음수"); 
+
+
+			//2)
+			let b = [34,25];
+			
+			//길게 쓰면 이렇게 쓰지만
+			if(a.length === 0){
+				console.log("빈배열");
+			} else {
+				console.log("안 빈 배열");
+			}
+
+			//3항 연산자
+			const arrayStatus = a.length === 0? "빈 배열" : "안 빈 배열"; 
+
+			document.write(arrayStatus);
+
+
+			//3) trusy와 fulsy 이용
+			let c;
+			const result = c ? true : false;
+			console.log(result); //c라는 값은 지금 undefined
+
+			let d = [];
+			const result2 = d ? true : false;
+			console.log(result2); //d는 true
+
+			//TODO 확정 계산 프로그램
+			//90점 이상 A+
+			//50점 이상 B+
+			//들다 아니면 F
+
+			let score = prompt("숫자를 입력해주세요");
+			const arrayResult = score >= 90 ? "A" : score >= 50 ? "B" : "F";
+
+			document.write(arrayResult);
+			
+			//3항 연산자를 중첩으로 사용하면 가독성이 떨어져서 중첩을 사용하게 된다면 if 조건문으로 변경하는 것이 좋습니다.
+			if (socre >= 90){
+				console.log("A+");
+			}else if(score >= 50){
+				console.log("B");
+			}else {
+				console.log("F");
+			}
+
+
+		</script>
+		
+
+		
+    </body>
+</html>
